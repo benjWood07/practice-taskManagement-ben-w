@@ -1,39 +1,33 @@
 import { Link } from "react-router";
 
-export default function TaskList() {
+const TaskList = () => {
     const tasks = [
-        {
-            id: 1,
-            title: 'Learn React',
-            description: 'Learn about React Router '
+        { id: 1,
+          title: "Learn React",
+          description: "Understand the basics of React."
         },
-        {
-            id: 2,
-            title: 'Foundations ',
-            description: 'What we learned about foundations'
+        { id: 2,
+          title: "Practice Hooks",
+          description: "Master useState and useEffect."
         },
-        {
-            id: 3,
-            title: 'Java Development',
-            description: 'Learning about backend connections and data structures'
-        }       
+        { id: 3,
+          title: "Explore React Router",
+          description: "Learn routing and URL parameters."
+        },
     ];
 
-
-    return(
+    return (
         <div>
             <h1>Task List</h1>
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>
-                        <Link to={`/task/${task.id}`}>
-                        {task.title}
-                        </Link>
+                        <Link to={`/task/${task.id}`}>{task.title}</Link>
                     </li>
                 ))}
             </ul>
-
         </div>
-    )
+    );
+};
 
-}
+export default TaskList;

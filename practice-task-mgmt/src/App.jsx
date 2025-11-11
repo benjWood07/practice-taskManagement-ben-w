@@ -1,18 +1,17 @@
-import './App.css'
-import TaskList from './components/TaskList'
-import { BrowserRouter, Router, Route } from 'react-router'
-
+import { Router, Routes, Route } from "react-router";
+import TaskList from "./components/TaskList";
+import TaskDetail from "./components/TaskDetail";
 
 function App() {
-
-
-  return (
-      <div>
-        <TaskList/>
-      </div>
-    )
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<TaskList />} />
+                <Route path="/task/:taskId" element={<TaskDetail />} />
+            </Routes>
+        </Router>
+    );
 }
 
-export default App
-
+export default App;
 
